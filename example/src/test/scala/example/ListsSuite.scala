@@ -115,7 +115,7 @@ class ListsSuite extends FunSuite {
    * every tested aspect of a method.
    */
   test("sum of a few numbers") {
-    assert(sum(List(1,2,0)) === 3)
+    assert(sum(List(1, 2, 0)) === 3)
   }
 
   test("max of a few numbers") {
@@ -123,6 +123,10 @@ class ListsSuite extends FunSuite {
   }
 
   test("all negative numbers") {
-    assert(max(List(-1,-5,-7)) === -1)
+    assert(max(List(-1, -5, -7)) === -1)
+  }
+
+  test("mix of numbers") {
+    assert(max(List(-3, 3, 1)) === 3)
   }
 }
