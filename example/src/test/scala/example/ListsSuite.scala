@@ -129,4 +129,8 @@ class ListsSuite extends FunSuite {
   test("mix of numbers") {
     assert(max(List(-3, 3, 1)) === 3)
   }
+
+  test("all zeros") {
+    assert(max(List(0, 0, 0)) === 0)
+  }
 }
