@@ -123,14 +123,17 @@ class ListsSuite extends FunSuite {
   }
 
   test("all negative numbers") {
+    assert(sum(List(-1, -5, -7)) === -13)
     assert(max(List(-1, -5, -7)) === -1)
   }
 
   test("mix of numbers") {
+    assert(sum(List(-3, 3, 1)) === 1)
     assert(max(List(-3, 3, 1)) === 3)
   }
 
   test("all zeros") {
+    assert(sum(List(0, 0, 0)) === 0)
     assert(max(List(0, 0, 0)) === 0)
   }
 }
