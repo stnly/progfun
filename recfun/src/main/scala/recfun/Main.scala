@@ -23,7 +23,15 @@ object Main {
   /**
    * Exercise 2
    */
-  def balance(chars: List[Char]): Boolean = ???
+  def balance(chars: List[Char]): Boolean = {
+    def balancing(chars: List[Char], num: Int): Boolean = (chars, num) match {
+      case (Nil, num) => num == 0
+      case ('(' :: c, num) => balancing(c, num + 1)
+      case (')' :: c, num) => if (num == 0) false else balancing(c, num - 1)
+      case (_ :: c, num) => balancing(c, num)
+    }
+    balancing(chars, 0)
+  }
 
   /**
    * Exercise 3
