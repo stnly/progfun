@@ -17,7 +17,7 @@ object Main {
   def pascal(c: Int, r: Int): Int = (c, r) match {
     case (_, 0) => 1
     case (0, _) => 1
-    case (c, r) => if (c == r) 1 else pascal(c, r - 1) + pascal(c - 1, r - 1)
+    case (`c`, `r`) => if (c == r) 1 else pascal(c, r - 1) + pascal(c - 1, r - 1)
   }
 
   /**
@@ -25,10 +25,10 @@ object Main {
    */
   def balance(chars: List[Char]): Boolean = {
     def balancing(chars: List[Char], num: Int): Boolean = (chars, num) match {
-      case (Nil, num) => num == 0
-      case ('(' :: c, num) => balancing(c, num + 1)
-      case (')' :: c, num) => if (num == 0) false else balancing(c, num - 1)
-      case (_ :: c, num) => balancing(c, num)
+      case (Nil, `num`) => num == 0
+      case ('(' :: c, `num`) => balancing(c, num + 1)
+      case (')' :: c, `num`) => if (num == 0) false else balancing(c, num - 1)
+      case (_ :: c, `num`) => balancing(c, num)
     }
     balancing(chars, 0)
   }
