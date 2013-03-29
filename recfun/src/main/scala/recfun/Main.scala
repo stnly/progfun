@@ -14,7 +14,11 @@ object Main {
   /**
    * Exercise 1
    */
-  def pascal(c: Int, r: Int): Int = ???
+  def pascal(c: Int, r: Int): Int = (c, r) match {
+    case (_, 0) => 1
+    case (0, _) => 1
+    case (c, r) => if (c == r) 1 else pascal(c, r - 1) + pascal(c - 1, r - 1)
+  }
 
   /**
    * Exercise 2
