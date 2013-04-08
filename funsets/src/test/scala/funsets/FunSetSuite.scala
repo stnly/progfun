@@ -141,4 +141,11 @@ class FunSetSuite extends FunSuite {
       assert(!contains(t, 3), "Filter 3")
     }
   }
+
+  test("forall returns whether all bounded integers within `s` satisfy `p`") {
+    new TestSets {
+      val s = union(s1, s2)
+      assert(forall(s, x => x == 1 || x == 2), "Forall 1")
+    }
+  }
 }
