@@ -131,4 +131,14 @@ class FunSetSuite extends FunSuite {
       assert(!contains(u, 3), "Diff 3")
     }
   }
+
+  test("filter returns elements of a set that are accepted by a given predicate") {
+    new TestSets {
+      val s = union(union(s1, s2), s3)
+      val t = filter(s, x => x == 1)
+      assert(contains(t, 1), "Filter 1")
+      assert(!contains(t, 2), "Filter 2")
+      assert(!contains(t, 3), "Filter 3")
+    }
+  }
 }
