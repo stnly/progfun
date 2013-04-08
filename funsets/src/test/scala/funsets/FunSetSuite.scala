@@ -158,4 +158,13 @@ class FunSetSuite extends FunSuite {
       assert(!exists(s, x => x == 3), "Exists 3")
     }
   }
+
+  test("map returns transformed set") {
+    new TestSets {
+      val s = map(s1, x => x + 1)
+      assert(!contains(s, 1), "Map 1")
+      assert(contains(s, 2), "Map 2")
+      assert(!contains(s, 3), "Map 3")
+    }
+  }
 }
