@@ -146,6 +146,7 @@ class FunSetSuite extends FunSuite {
     new TestSets {
       val s = union(s1, s2)
       assert(forall(s, x => x == 1 || x == 2), "Forall 1")
+      assert(!forall(s, x => x == 1), "Forall 2")
     }
   }
 }
