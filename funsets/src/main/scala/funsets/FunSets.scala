@@ -59,7 +59,7 @@ object FunSets {
       else if (s(a) && !p(a)) false
       else iter(a + 1)
     }
-    iter(bound - 1)
+    iter(-bound)
   }
 
   /**
