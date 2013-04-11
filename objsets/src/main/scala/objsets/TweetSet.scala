@@ -139,6 +139,13 @@ class NonEmpty(elem: Tweet, left: TweetSet, right: TweetSet) extends TweetSet {
 
   def union(that: TweetSet): TweetSet = right.union(left.union(that)).incl(elem)
 
+  def mostRetweeted: Tweet = {
+    ((left.union(right)).filter(x => x.retweets > elem.retweets)) match {
+      case x: NonEmpty => x.mostRetweeted
+      case _ => elem
+    }
+  }
+
   /**
    * The following methods are already implemented
    */
