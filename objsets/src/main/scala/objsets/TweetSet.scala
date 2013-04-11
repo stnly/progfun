@@ -10,6 +10,10 @@ class Tweet(val user: String, val text: String, val retweets: Int) {
   override def toString: String =
     "User: " + user + "\n" +
     "Text: " + text + " [" + retweets + "]"
+
+  def containsWords(ls: List[String]): Boolean = {
+    ls.map(s => this.text.contains(s)).exists(w => w)
+  }
 }
 
 /**
