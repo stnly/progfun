@@ -26,7 +26,9 @@ object Huffman {
 
   // Part 1: Basics
 
-  def weight(tree: CodeTree): Int = ??? // tree match ...
+  def weight(tree: CodeTree): Int = tree match {
+    case Fork(_, _, _, w) => w
+  }
 
   def chars(tree: CodeTree): List[Char] = ??? // tree match ...
 
