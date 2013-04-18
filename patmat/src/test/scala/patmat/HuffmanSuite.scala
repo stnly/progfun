@@ -64,4 +64,11 @@ class HuffmanSuite extends FunSuite {
       assert(decode(t1, encode(t1)("ab".toList)) === "ab".toList)
     }
   }
+
+  test("quickEncode") {
+    new TestTrees {
+      assert(quickEncode(t1)("ab".toList) === List(0, 1))
+      assert(quickEncode(frenchCode)("huffmanestcool".toList) == secret)
+    }
+  }
 }
