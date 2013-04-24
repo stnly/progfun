@@ -17,3 +17,13 @@ nums takeWhile(x => x > 0)
 nums dropWhile(x => x > 0)
 nums span(x => x > 0)
 
+val data = List("a", "a", "a", "b", "c", "c", "a")
+
+def pack[T](xs: List[T]): List[List[T]] = xs match {
+  case Nil => Nil
+  case x :: xs1 =>
+    val (first, rest) = xs span(y => y == x)
+    first :: pack(rest)
+}
+
+pack(data)
