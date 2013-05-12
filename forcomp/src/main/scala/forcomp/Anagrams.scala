@@ -1,6 +1,7 @@
 package forcomp
 
 import common._
+import scala.collection.Map
 
 object Anagrams {
 
@@ -55,7 +56,8 @@ object Anagrams {
    *    List(('a', 1), ('e', 1), ('t', 1)) -> Seq("ate", "eat", "tea")
    *
    */
-  lazy val dictionaryByOccurrences: Map[Occurrences, List[Word]] = ???
+  lazy val dictionaryByOccurrences: Map[Occurrences, List[Word]] =
+    dictionary.map(w => (w, wordOccurrences(w))).groupBy(x => x._2).mapValues(y => y.map(z => z._1))
 
   /** Returns all the anagrams of a given word. */
   def wordAnagrams(word: Word): List[Word] = ???
